@@ -3,16 +3,20 @@ import { Locator, Page } from "@playwright/test";
 export class StartPage {
     readonly page: Page;
     readonly actionButton: Locator;
+    readonly body: Locator;
     title: Locator;
     okText: Locator;
     bignitedLogo: Locator;
+    transitionText: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.actionButton = page.locator('#action-button');
+        this.body = page.locator('body');
         this.title = page.getByText('Hackathon');
         this.okText = page.getByText('Ok');
         this.bignitedLogo = page.locator('.logo');
+        this.transitionText = page.locator('.typing');
     }
 
     async goTo() {
@@ -21,5 +25,9 @@ export class StartPage {
 
     async clickActionButton() {
         await this.actionButton.click();
+    };
+
+    async clickBody() {
+        await this.body.click();
     };
 }

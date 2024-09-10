@@ -6,8 +6,6 @@ export class InformationPage {
 
     constructor(page: Page) {
         this.page = page;
-        this.form = page.getByRole('form');
+        this.form = page.locator('.flickering-text');
     }
-
-    
 }

@@ -42,6 +42,6 @@ describe('StartPage', () => {
     await expect(startPage.heartsContainer).toBeVisible({ timeout: 10000 });
 
     await expect(informationPage.form).toBeVisible({ timeout: 15000 });
-  })
+  });
 
 });

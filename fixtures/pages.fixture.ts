@@ -1,4 +1,4 @@
-import { InformationPage } from "../pages/InformationPage";
+import { InformationPage } from "../pages/informationPage";
 import { StartPage } from "../pages/StartPage";
 import { test as base } from '@playwright/test';
 

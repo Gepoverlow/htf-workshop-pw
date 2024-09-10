@@ -1,8 +1,6 @@
 import { expect } from "@playwright/test";
 import { test } from "../fixtures/pages.fixture";
 import { describe } from "node:test";
-import { StartPage } from "../pages/StartPage";
-import { start } from "node:repl";
 
 describe('StartPage', () => {
 
@@ -51,6 +49,15 @@ describe('StartPage', () => {
     await startPage.clickSkipTransitionButton();
 
     await expect(informationPage.form).toBeVisible({ timeout: 15000 });
+  });
+
+  test('shouldBeOnInformationPage', async ({ startPage, informationPage }) => {
+    await startPage.clickActionButton();
+    await startPage.clickBody();
+
+    await startPage.clickSkipTransitionButton();
+
+    await expect(informationPage.page).toHaveURL('/information');
   });
 
 });

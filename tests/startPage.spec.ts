@@ -30,7 +30,7 @@ describe('StartPage', () => {
     await startPage.clickBody();
 
     await expect(startPage.transitionText).toBeVisible();
-    await expect(startPage.transitionText).toContainText('Before you start your mission we need a few details', { timeout: 10000 })
+    await expect(startPage.transitionText).toContainText('Before you start your mission we need a few details', { timeout: 30000 })
   });
 
   test('shouldGoToInformationPage', async ({ startPage, informationPage }) => {

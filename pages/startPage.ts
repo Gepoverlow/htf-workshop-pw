@@ -8,6 +8,7 @@ export class StartPage {
     okText: Locator;
     bignitedLogo: Locator;
     transitionText: Locator;
+    heartsContainer: Locator;
 
     constructor(page: Page) {
         this.page = page;
@@ -17,6 +18,7 @@ export class StartPage {
         this.okText = page.getByText('Ok');
         this.bignitedLogo = page.locator('.logo');
         this.transitionText = page.locator('.typing');
+        this.heartsContainer = page.locator('.hearts-container');
     }
 
     async goTo() {

@@ -35,4 +35,13 @@ describe('StartPage', () => {
     await expect(startPage.transitionText).toContainText('Before you start your mission we need a few details', { timeout: 10000 })
   });
 
+  test('shouldGoToInformationPage', async ({ startPage, informationPage }) => {
+    await startPage.clickActionButton();
+    await startPage.clickBody();
+
+    await expect(startPage.heartsContainer).toBeVisible({ timeout: 10000 });
+
+    await expect(informationPage.form).toBeVisible({ timeout: 15000 });
+  })
+
 });

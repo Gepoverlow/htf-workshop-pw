@@ -4,6 +4,7 @@ export class StartPage {
     readonly page: Page;
     readonly actionButton: Locator;
     readonly body: Locator;
+    readonly skipTransitionButton: Locator;
     title: Locator;
     okText: Locator;
     bignitedLogo: Locator;
@@ -14,6 +15,7 @@ export class StartPage {
         this.page = page;
         this.actionButton = page.locator('#action-button');
         this.body = page.locator('body');
+        this.skipTransitionButton = page.locator('.ski-button');
         this.title = page.getByText('Hackathon');
         this.okText = page.getByText('Ok');
         this.bignitedLogo = page.locator('.logo');
@@ -31,5 +33,9 @@ export class StartPage {
 
     async clickBody() {
         await this.body.click();
+    };
+
+    async clickSkipTransitionButton() {
+        await this.skipTransitionButton.click({ timeout: 10000 });
     };
 }

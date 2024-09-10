@@ -23,7 +23,7 @@ describe('StartPage', () => {
   test('shouldHideBignitedLogo', async ({ startPage }) => {
     await startPage.clickActionButton();
 
-    await expect(startPage.bignitedLogo).toHaveCount(0, {timeout: 10000});
+    await expect(startPage.bignitedLogo).toHaveCount(0, { timeout: 10000 });
   });
 
   test('shouldShouldTransitionMessageAfterEarthClick', async ({ startPage }) => {
@@ -40,6 +40,15 @@ describe('StartPage', () => {
     await startPage.clickBody();
 
     await expect(startPage.heartsContainer).toBeVisible({ timeout: 10000 });
+
+    await expect(informationPage.form).toBeVisible({ timeout: 15000 });
+  });
+
+  test('shouldSkipToInformationPageAfterClick', async ({ startPage, informationPage }) => {
+    await startPage.clickActionButton();
+    await startPage.clickBody();
+
+    await startPage.clickSkipTransitionButton();
 
     await expect(informationPage.form).toBeVisible({ timeout: 15000 });
   });
